@@ -33,9 +33,17 @@ csvFile = open('FatalitiesFY10.csv', encoding='latin-1')
 csvReader = csv.reader(csvFile)
 csvData = list(csvReader)
 
+stateAndId = {}
 for line in csvData:
     stateCodeLine = line[3]
-    print(stateCodeLine)
+    stateCodeList = stateCodeLine.split(",")
+    stateCode = stateCodeList[-1]
+    state = stateCodeList[-2]
+    stateAndId[state] = stateCode
+    
+print(stateAndId)
+    
+    
     
     
 
