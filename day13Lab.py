@@ -34,12 +34,12 @@ csvReader = csv.reader(csvFile)
 csvData = list(csvReader)
 
 stateAndId = {}
-for line in csvData:
+for line in csvData[1:]:
     stateCodeLine = line[3]
     stateCodeList = stateCodeLine.split(",")
     stateCode = stateCodeList[-1]
-    state = stateCodeList[-2]
-    stateAndId[state] = stateCode
+   # state = stateCodeList[-2]
+   # stateAndId[state] = stateCode
     
 print(stateAndId)
     
