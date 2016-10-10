@@ -6,6 +6,9 @@ This is a temporary script file.
 """
 
 import json
+import csv
+
+#part 1
 
 with open('olympics2014.json') as myFile:
     olyList = json.load(myFile)
@@ -23,6 +26,16 @@ for country in olyList:
     print(countryName + " " + str(totalMedals))
     
 print("Best country: " + bestCountry + " " + str(bestMedals))
+
+#end part 1, start part 2
+
+csvFile = open('FatalitiesFY10.csv', encoding='latin-1')
+csvReader = csv.reader(csvFile)
+csvData = list(csvReader)
+
+for line in csvData:
+    stateCodeLine = line[3]
+    print(stateCodeLine)
     
     
 
